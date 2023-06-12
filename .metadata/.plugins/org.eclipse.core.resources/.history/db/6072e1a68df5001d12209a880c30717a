@@ -1,0 +1,24 @@
+package Practice;
+import java.util.*;
+public class SubSequenceSumK {
+	public static void subSequences(int ind,int[] arr,ArrayList<Integer> sub,int sum,int k) {
+		if(ind==arr.length) {
+			if(sum==k) {
+				System.out.println(sub.toString());
+				return;
+			}
+		}
+		sub.add(arr[ind]);
+		sum+=arr[ind];
+		subSequences(ind++,arr,sub,sum,k);
+		sub.remove(sub.size()-1);
+		sum-=arr[ind];
+		subSequences(ind++,arr,sub,sum,k);
+		
+	}
+	public static void main(String args[]) {
+		int arr[]= {1,2,1};
+		subSequences(0,arr,new ArrayList<>(),0,2);
+		
+	}
+}
