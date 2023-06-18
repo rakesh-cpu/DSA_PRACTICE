@@ -1,8 +1,6 @@
 package recursion;
 import java.util.Scanner;
 
-import javax.security.sasl.SaslException;
-import javax.swing.plaf.synth.SynthSpinnerUI;
 
 public class StocksBuyAndSell {
     public static void main(String[] args) {
