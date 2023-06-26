@@ -1,10 +1,28 @@
 package TwoDimentional;
 import java.util.*;
-public class DiagonalTraversal{
-    public static void printDiagonalpath(int arr[][]){
-        for(int g=0;g<arr.length;g++){
-            for(int i=0,j=g;j<arr.length;i++,j++){
-                System.out.print(arr[i][j]+" ");
+public class Saddle {
+    public static void findSaddlePoint(int arr[][]){
+        int sdj=0;
+        for(int step=0;step<arr.length;step++){
+            for(int j=0;j<arr.length;j++){
+                
+                if(arr[step][sdj]<arr[step][j]){
+                    sdj =j; 
+
+                }
+
+
+            }
+            boolean flag = true;
+            
+            for(int k=0;k<arr.length;k++){
+                if(arr[step][sdj]>arr[k][sdj]){
+                    flag= false;
+                    break;
+                }
+            }
+            if(flag==true){
+                System.out.println(arr[step][sdj]);
             }
         }
     }
@@ -12,7 +30,7 @@ public class DiagonalTraversal{
         Scanner sc = new Scanner(System.in);
         int row = sc.nextInt();
         int col = sc.nextInt();
-f
+
         int arr[][] = new int[row][col];
         System.out.println("Enter two dimentional array elements");
         
@@ -30,8 +48,7 @@ f
             }
             System.out.println();
         }
-        printDiagonalpath(arr);
-
+        findSaddlePoint(arr);
     }
     
 }
