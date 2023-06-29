@@ -1,7 +1,9 @@
 package SortingAlgo;
 
 import java.util.Scanner;
-
+// import java.lang.*;
+// 1902902204
+// 1346203308
 
 public class BubbleSort {
     public static void bubbleSort(int arr[]){
@@ -28,6 +30,7 @@ public class BubbleSort {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int startT = (int) System.nanoTime();
         System.out.println("enter array size:");
         int n = sc.nextInt();
         System.out.println("enter array elements:");
@@ -40,5 +43,8 @@ public class BubbleSort {
         for(int item : arr){
             System.out.println(item);
         }
+        int endT = (int) System.nanoTime();
+        int time = endT - startT;
+        System.out.println(time);
     }
 }
