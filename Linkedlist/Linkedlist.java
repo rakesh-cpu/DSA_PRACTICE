@@ -9,11 +9,17 @@ class Node{
         }
 }
 public class Linkedlist {
-    static Node head;
-    static Node tail;
-    static int size = 0;
+    public Node head;
+    public Node tail;
+     int size = 0;
+     public Node getHead(){
+        return head;
+     }
+     public Node getTail(){
+        return tail;
+     }
     // adding element to the linkedlist at the beginning
-    public static void addFirst(int data){
+    public void addFirst(int data){
         Node node  = new Node(data,null);
         if(head==null){
             head = node;
@@ -26,7 +32,7 @@ public class Linkedlist {
         size++;
     }
     // adding element to the linkedlist at the end
-    public static void addLast(int data){
+    public void addLast(int data){
         Node node = new Node(data,null);
         if(head==null){
             head = node;
@@ -40,7 +46,7 @@ public class Linkedlist {
 
 
     }
-    public static void insert(int data,int pos){
+    public void insert(int data,int pos){
         Node node  = new Node(data, null);
         if(head==null){
             head = node;
@@ -73,7 +79,7 @@ public class Linkedlist {
         }
     }
     // removing element from the linkedlist
-    public static void removeFirst(){
+    public  void removeFirst(){
         if(head==null){
             System.out.println("nothing to remove:");
             return;
@@ -87,7 +93,7 @@ public class Linkedlist {
     
         size--;
     }
-    public static void removeLast(){
+    public  void removeLast(){
         if(head==tail){
             tail = null;
             head = null;
@@ -110,7 +116,7 @@ public class Linkedlist {
     public static void remove(int data){
 
     }
-    public static void display(){
+    public void displayList(){
         Node temp = head;
         if(head==null){
             System.out.println("nothing to print list is empty");
@@ -119,16 +125,17 @@ public class Linkedlist {
             System.out.print(temp.data+"->");
             temp = temp.next;
         }
+        System.out.println();
 
     }
-    private static Node getNode(int pos){
+    public  Node getNode(int pos){
          Node temp = head;
          for(int i=0;i<pos;i++){
             temp = temp.next;
          }
          return temp;
     }
-    public static void reverseItr(){
+    public void reverseItr(){
         int li=0;
         int ri = size-1;
         while(li<ri){
@@ -145,7 +152,7 @@ public class Linkedlist {
         } 
 
     }
-    public static void reversePtr(){
+    public  void reversePtr(){
         Node prev = null;
         Node curr = head;
         
@@ -159,7 +166,7 @@ public class Linkedlist {
         head = tail;
         tail = temp;
     }
-    public static int kthFromLast(int k){
+    public  int kthFromLast(int k){
         Node s = head ;
         Node f = head ;
         if (head == null) {
@@ -185,13 +192,25 @@ public class Linkedlist {
         return s.data;
 
     }
+    public  int mid(){
+        Node s = head;
+        Node f = head;
+        while(f.next!=null){
+            s = s.next;
+            f = f.next.next;
+        }
+        
+        return s.data;
+    }
 
-    public static void main(String[] args) {
-        addFirst(30);
-        addFirst(20);
-        addFirst(10);
-        addLast(40);
-        insert(25,4);
+    public  void main(String[] args) {
+        Linkedlist list = new Linkedlist();
+        list.addFirst(30);
+        list.addFirst(20);
+        list.addFirst(10);
+        list.addLast(40);
+        list.addLast(50);
+        // insert(25,4);
         // removeFirst();
         // removeLast();
         // display();
@@ -199,8 +218,9 @@ public class Linkedlist {
         System.out.println();
         // display();
         // reversePtr();
-        display();
+        list.displayList();
         System.out.println();
-        System.out.println(kthFromLast(8));
+        // System.out.println(kthFromLast(8));
+        System.out.println(mid());
     }
 }
