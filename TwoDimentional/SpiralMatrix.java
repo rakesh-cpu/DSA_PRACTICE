@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class SpiralMatrix {
     public static void printSpiralMatrix(int arr[][]){
         int left=0,right=arr[0].length-1;
-        int down= arr.length-1;
+        int down= arr.length;
         
         int row = 0;
         while(left<=right){
