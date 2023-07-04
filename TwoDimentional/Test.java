@@ -16,7 +16,6 @@ public class Test{
         Random random = new Random();
         for(int i=0;i<len;i++){
             int idx = random.nextInt(list.size());
-            System.out.println(idx+" ");
             if(i%n==0) System.out.println();
             System.out.print(list.get(idx)+" ");
             list.remove(list.get(idx));
@@ -24,5 +23,6 @@ public class Test{
 
         
     }
+    System.out.println("successful:")
 }
 
