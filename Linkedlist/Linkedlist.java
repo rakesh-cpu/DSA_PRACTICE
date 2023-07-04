@@ -11,12 +11,16 @@ class Node{
 public class Linkedlist {
     public Node head;
     public Node tail;
-     int size = 0;
+    public Node rleft;
+    public int size = 0;
      public Node getHead(){
         return head;
      }
      public Node getTail(){
         return tail;
+     }
+     public Node rleft(){
+        return rleft;
      }
     // adding element to the linkedlist at the beginning
     public void addFirst(int data){
@@ -113,6 +117,15 @@ public class Linkedlist {
         tail = prev;
 
     }
+    public  int size(Node head){
+        Node temp = head;
+        int size1 = 0;
+        while(temp!=null){
+            temp = temp.next;
+            size1++;
+        }
+        return size1;
+    }
     public static void remove(int data){
 
     }
@@ -202,14 +215,24 @@ public class Linkedlist {
         
         return s.data;
     }
+    public void printReverseRec(Node temp){
+        if(temp==null){
+            return;
+        }
+    
+        printReverseRec(temp.next);
+        System.out.print(temp.data+" ");
+    }
 
-    public  void main(String[] args) {
+    public static void main(String[] args) {
         Linkedlist list = new Linkedlist();
         list.addFirst(30);
         list.addFirst(20);
         list.addFirst(10);
         list.addLast(40);
         list.addLast(50);
+        list.addLast(60);
+
         // insert(25,4);
         // removeFirst();
         // removeLast();
@@ -221,6 +244,8 @@ public class Linkedlist {
         list.displayList();
         System.out.println();
         // System.out.println(kthFromLast(8));
-        System.out.println(mid());
+        // System.out.println(mid());
+        Node temp = list.getHead();
+        list.printReverseRec(temp);
     }
 }
