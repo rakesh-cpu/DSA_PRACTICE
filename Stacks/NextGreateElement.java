@@ -20,6 +20,7 @@ public class NextGreateElement {
 
 public static void display(int[]  a){
     StringBuilder sb= new StringBuilder();
+    System.out.println("displaying the result:nolan");
     for(int val:a){
         sb.append(val+"\n");
     }
