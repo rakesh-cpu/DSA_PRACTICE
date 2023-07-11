@@ -24,7 +24,7 @@ public class BinaryTreeCreation {
                 this.state = state;
             }
     }
-    public static void display(Node root){
+    public static void Inorderdisplay(Node root){
         if(root==null){
             return;
         }
@@ -33,8 +33,32 @@ public class BinaryTreeCreation {
         str+="<-"+root.data+"->";
         str+=root.right == null ? " ." : root.right.data+" ";
         System.out.println(str);
-        display(root.left);
-        display(root.right);
+        Inorderdisplay(root.left);
+        Inorderdisplay(root.right);
+    }
+    public static void postOrderDisplay(Node root){
+        if(root==null){
+            return;
+        }
+        postOrderDisplay(root.left);
+        postOrderDisplay(root.right);
+        String  str = " ";
+        str+= root.left == null ? "." : root.left.data+" ";
+        str+="<-"+root.data+"->";
+        str+=root.right == null ? " ." : root.right.data+" ";
+        System.out.println(str);
+    }
+    public static void preOrderDisplay(Node root){
+        if(root==null){
+            return;
+        }
+        preOrderDisplay(root.left);
+        String  str = " ";
+        str+= root.left == null ? "." : root.left.data+" ";
+        str+="<-"+root.data+"->";
+        str+=root.right == null ? " ." : root.right.data+" ";
+        System.out.println(str);
+        preOrderDisplay(root.right);
     }
     public static void main(String[] args) {
         Integer[] arr = {50,25,12,null,null,37,30,null,null,null,75,62,null,70,null,null,87,null,null};
@@ -78,7 +102,9 @@ public class BinaryTreeCreation {
                 st.pop();
             }
         }
-        display(root);
+        Inorderdisplay(root);
+        preOrderDisplay(root);
+        postOrderDisplay(root);
 
     }
 }
