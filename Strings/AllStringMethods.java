@@ -44,6 +44,7 @@ public class AllStringMethods {
         System.out.println(arr);
 
         System.out.println("nothing");
+        System.out.println("nothing");
 
         
 
