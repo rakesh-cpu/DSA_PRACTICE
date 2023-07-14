@@ -79,6 +79,16 @@ public class BinaryTreeCreation {
         int tsum =  left+right+node.data;
         return tsum;
     }
+    public static int maxNodeData(Node node){
+        if(node==null){
+            return Integer.MIN_VALUE;
+        }
+        int left = maxNodeData(node.left);
+        int right = maxNodeData(node.right);
+        int max = Math.max(node.data,Math.max(left,right));
+        return max;
+    }
+    
     
     public static void main(String[] args) {
         Integer[] arr = {50,25,12,null,null,37,30,null,null,null,75,62,null,70,null,null,87,null,null};
@@ -127,7 +137,7 @@ public class BinaryTreeCreation {
         postOrderDisplay(root);
         System.out.println(size(root));
         System.out.println("sum of all nodes"+sumOfNodes(root));
-        // System.out.println("maximum element in the tree"+maxNodeData(root));
+        System.out.println("maximum element in the tree"+maxNodeData(root));
 
     }
 }
