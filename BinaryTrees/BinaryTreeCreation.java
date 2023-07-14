@@ -60,6 +60,26 @@ public class BinaryTreeCreation {
         System.out.println(str);
         preOrderDisplay(root.right);
     }
+    public static int size(Node node){
+        if(node==null){
+            return 0;
+        }
+        int left = size(node.left);
+        int right = size(node.right);
+        int ts = left+right+1;
+        return ts;
+
+    }
+    public static int sumOfNodes(Node node){
+        if(node==null){
+            return 0;
+        }
+        int left = sumOfNodes(node.left);
+        int right = sumOfNodes(node.right);
+        int tsum =  left+right+node.data;
+        return tsum;
+    }
+    
     public static void main(String[] args) {
         Integer[] arr = {50,25,12,null,null,37,30,null,null,null,75,62,null,70,null,null,87,null,null};
         Node root = new Node(arr[0], null, null);
@@ -105,6 +125,9 @@ public class BinaryTreeCreation {
         Inorderdisplay(root);
         preOrderDisplay(root);
         postOrderDisplay(root);
+        System.out.println(size(root));
+        System.out.println("sum of all nodes"+sumOfNodes(root));
+        // System.out.println("maximum element in the tree"+maxNodeData(root));
 
     }
 }
