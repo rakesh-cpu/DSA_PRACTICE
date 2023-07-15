@@ -88,6 +88,24 @@ public class BinaryTreeCreation {
         int max = Math.max(node.data,Math.max(left,right));
         return max;
     }
+    public static int minNodeData(Node node){
+        if(node==null){
+            return Integer.MAX_VALUE;
+        }
+        int left = maxNodeData(node.left);
+        int right = maxNodeData(node.right);
+        int min = Math.min(node.data,Math.min(left,right));
+        return min;
+    }
+    public static int height(Node node){
+        if(node==null){
+            return -1;
+        }
+        int lh = height(node.left);
+        int rh = height(node.right);
+        int th = Math.max(lh,rh)+1;
+        return th;
+    }
     
     
     public static void main(String[] args) {
@@ -138,6 +156,9 @@ public class BinaryTreeCreation {
         System.out.println(size(root));
         System.out.println("sum of all nodes"+sumOfNodes(root));
         System.out.println("maximum element in the tree"+maxNodeData(root));
+        System.out.println("manimum element in the tree"+minNodeData(root));
+        System.out.println("Height of the tree is:"+height(root));
+
 
     }
 }
