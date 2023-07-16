@@ -106,6 +106,11 @@ public class BinaryTreeCreation {
         int th = Math.max(lh,rh)+1;
         return th;
     }
+    public static void displayItr(Node node){
+
+
+        
+    }
     
     
     public static void main(String[] args) {
