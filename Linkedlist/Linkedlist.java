@@ -2,7 +2,7 @@ package Linkedlist;
 
 class Node{
     int data;
-    Node next;
+    Linkedlist next;
         Node(int data,Node next){
             this.data = data;
             this.next = next;
@@ -13,6 +13,8 @@ public class Linkedlist {
     public Node tail;
     public Node rleft;
     public int size = 0;
+    public Linkedlist next;
+    public Integer data;
      public Node getHead(){
         return head;
      }
@@ -148,6 +150,13 @@ public class Linkedlist {
          }
          return temp;
     }
+    public  int getElement(int pos){
+        Node temp = head;
+        for(int i=0;i<pos;i++){
+           temp = temp.next;
+        }
+        return temp.data;
+   }
     public void reverseItr(){
         int li=0;
         int ri = size-1;
@@ -205,6 +214,7 @@ public class Linkedlist {
         return s.data;
 
     }
+    
     public  int mid(){
         Node s = head;
         Node f = head;
