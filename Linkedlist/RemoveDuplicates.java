@@ -32,6 +32,12 @@ public class RemoveDuplicates {
         list.addLast(10);
         list.addLast(10);
         list.addLast(20);
+        list.addLast(40);
+        list.addLast(40);
+        list.addLast(40);
+        list.addLast(40);
+        list.addLast(40);
+        
         MergeSort m = new MergeSort();
         RemoveDuplicates rm = new RemoveDuplicates();
         // Node h = list.getHead();
