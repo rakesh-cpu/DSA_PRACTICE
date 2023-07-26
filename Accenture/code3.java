@@ -10,6 +10,7 @@ public class code3 {
                 idx = i;
             }
             min = Math.min(min,Math.abs(arr[i]-value));
+            System.out.println(min);
                
         }
 
