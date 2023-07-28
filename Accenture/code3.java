@@ -11,6 +11,7 @@ public class code3 {
             }
             min = Math.min(min,Math.abs(arr[i]-value));
             System.out.println(min);
+            System.out.println(idx);
                
         }
 
