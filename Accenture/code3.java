@@ -13,6 +13,7 @@ public class code3 {
             System.out.println(min);
             System.out.println(idx);
             System.out.println("sleeping");
+            System.out.println("repeat");
                
         }
 
