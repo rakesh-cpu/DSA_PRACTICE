@@ -15,6 +15,7 @@ public class code3 {
             System.out.println("sleeping");
             System.out.println("repeat");
             System.out.println("WILL START FROM TOMORROW");
+            System.out.println("repeat");
                
         }
 
