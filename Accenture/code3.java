@@ -19,6 +19,8 @@ public class code3 {
             System.out.println("repeat");
             System.out.println("repeat");
             System.out.println("repeat");
+            System.out.println("repeat");
+
 
 
 
